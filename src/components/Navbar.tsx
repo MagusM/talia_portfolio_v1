@@ -46,7 +46,7 @@ export const Navbar = () => {
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "Timeline", path: "/timeline" },
+    { name: "Process", path: "/timeline" },
     { name: "Services", path: "/#services" },
     { name: "Contact", path: "/#contact" },
   ];
@@ -64,9 +64,9 @@ export const Navbar = () => {
           <motion.div whileHover={{ scale: 1.05 }}>
             <button
               onClick={() => handleNavigation("/")}
-              className="text-2xl font-bold text-gray-900"
+              className="text-md md:text-2xl font-bold text-gray-900"
             >
-              Talia Chriqui
+              Talia Chriqui Consulting & Support
             </button>
           </motion.div>
 

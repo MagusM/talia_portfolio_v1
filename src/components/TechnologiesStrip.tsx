@@ -69,7 +69,7 @@ export const TechnologyStrip = () => {
           </h2>
         </motion.div>
 
-        <div className="flex justify-center gap-12">
+        <div className="flex flex-wrap justify-center gap-12">
           {technologies.map((tech, index) => (
             <div
               key={`${tech.name}-${index}`}

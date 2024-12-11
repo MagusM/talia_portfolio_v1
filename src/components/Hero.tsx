@@ -55,31 +55,96 @@ export const Hero = () => {
             className="flex-1 max-w-5xl flex flex-col items-start relative z-0"
           >
             <h1 className="relative text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Insight to Impact:{" "}
-              <span className="relative text-gray-900">
-                <motion.span
+              From cold leads to{" "}
+              <span className="relative inline-block">
+                {/* Outer Flame Layer */}
+                <motion.div
                   initial={{
-                    color: "black", // Start with black text
-                    backgroundPosition: "-100%", // Start gradient far to the left
+                    scale: 1.2,
+                    opacity: 0.2,
                   }}
                   animate={{
-                    color: "transparent", // Transition text to transparent
-                    backgroundPosition: "200%", // Gradient sweeps fully to the right
+                    scale: [1.1, 1.3, 1.1], // Flickering motion
+                    translateY: [0, -10, 0], // Slight rising motion
+                    opacity: [0.5, 0.7, 0.6], // Flickering transparency
                   }}
                   transition={{
-                    duration: 4, // Duration of the animation
-                    delay: 2, // Delay before animation starts
-                    ease: "easeInOut", // Smooth start and end
+                    duration: 1.2, // Smooth animation duration
+                    repeat: Infinity, // Continuous loop
+                    ease: "easeInOut",
                   }}
-                  className="bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text text-transparent"
+                  className="absolute inset-0 -z-10 bg-gradient-to-t from-red-600 via-orange-500 to-yellow-400 blur-2xl"
                   style={{
-                    backgroundSize: "200%", // Adjust background size to balance gradient stops
+                    borderRadius: "50%",
+                    filter: "blur(30px)", // Larger blur for outer flame
                   }}
+                ></motion.div>
+
+                {/* Middle Flame Layer */}
+                <motion.div
+                  initial={{
+                    scale: 1,
+                    opacity: 0.7,
+                  }}
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    translateY: [0, -8, 0], // Slightly less movement than the outer layer
+                    opacity: [0.6, 0.8, 0.7],
+                  }}
+                  transition={{
+                    duration: 0.9,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute inset-0 -z-10 bg-gradient-to-t from-orange-500 via-yellow-400 to-white blur-lg"
+                  style={{
+                    borderRadius: "50%",
+                    filter: "blur(20px)", // Medium blur for middle flame
+                  }}
+                ></motion.div>
+
+                {/* Inner Flame Layer */}
+                <motion.div
+                  initial={{
+                    scale: 0.8,
+                    opacity: 0.8,
+                  }}
+                  animate={{
+                    scale: [0.8, 1, 0.8],
+                    translateY: [0, -6, 0], // Subtle motion for the inner layer
+                    opacity: [0.7, 0.9, 0.8],
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute inset-0 -z-10 bg-gradient-to-t from-yellow-400 via-white to-transparent blur-md"
+                  style={{
+                    borderRadius: "50%",
+                    filter: "blur(15px)", // Smallest blur for inner flame
+                  }}
+                ></motion.div>
+
+                {/* Text */}
+                <motion.span
+                  initial={{
+                    opacity: 0.9,
+                  }}
+                  animate={{
+                    opacity: [0.8, 1, 0.8], // Subtle flicker for glowing effect
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "mirror",
+                  }}
+                  className="relative bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text text-transparent"
                 >
-                  Empowering
+                  Hot
                 </motion.span>
               </span>{" "}
-              Teams - Driving Growth
+              deals
               <AnimatedUnderline color="israel" delay={1.3} width={"100%"} />
             </h1>
             <p className="text-xl text-gray-600 mb-8">

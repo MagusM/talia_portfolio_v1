@@ -46,7 +46,7 @@ export const Navbar = () => {
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "Process", path: "/timeline" },
+    { name: "Process", path: "/#timeline" },
     { name: "Services", path: "/#services" },
     { name: "Contact", path: "/#contact" },
   ];
@@ -56,7 +56,7 @@ export const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+        isScrolled || isMobileMenuOpen ? "bg-white shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">

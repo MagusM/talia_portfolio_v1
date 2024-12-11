@@ -69,16 +69,16 @@ export const TechnologyStrip = () => {
           </h2>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-12">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-12">
           {technologies.map((tech, index) => (
             <div
               key={`${tech.name}-${index}`}
-              className="flex flex-col items-center"
+              className="flex flex-col items-center gap-2"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <tech.logo
-                className={`w-12 h-12 mb-2 ${
+                className={`w-12 h-12 ${
                   hoveredIndex === index ? "text-red-500" : "text-gray-400"
                 }`}
               />
